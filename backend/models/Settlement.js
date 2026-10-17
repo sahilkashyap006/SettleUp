@@ -10,10 +10,12 @@ const settlementSchema = new mongoose.Schema(
     paidBy: {
       type: String,
       required: true,
+      trim: true,
     },
     paidTo: {
       type: String,
       required: true,
+      trim: true,
     },
     amount: {
       type: Number,

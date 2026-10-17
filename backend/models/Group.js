@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 
 const groupSchema = new mongoose.Schema(
@@ -5,19 +6,24 @@ const groupSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      trim: true
+      trim: true,
     },
     members: {
       type: [String],
-      required: true
+      required: true,
     },
     createdBy: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
+    owner: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
